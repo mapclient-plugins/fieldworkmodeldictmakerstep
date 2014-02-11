@@ -10,8 +10,8 @@ from mountpoints.workflowstep import WorkflowStepMountPoint
 
 class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
     '''
-    Skeleton step which is intended to be a helpful starting point
-    for new steps.
+    Step for collating a fieldwork model into a new or existing 
+    dictionary (fieldworkmodeldict).
     '''
 
     def __init__(self, location):
