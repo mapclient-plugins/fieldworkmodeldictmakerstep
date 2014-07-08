@@ -1,0 +1,6 @@
+
+<RCC>
+  <qresource prefix="fieldworkmodeldictmakerstep">
+    <file>images/fieldworkmodeldictmakericon.png</file>
+  </qresource>
+</RCC>
