@@ -5,7 +5,7 @@ MAP Client Plugin Step
 
 from PySide import QtGui
 
-from mountpoints.workflowstep import WorkflowStepMountPoint
+from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
 
 
 class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
@@ -19,6 +19,7 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         self._configured = True # A step cannot be executed until it has been configured.
         self._category = 'General'
         # Add any other initialisation code here:
+        self._icon = QtGui.QImage(':/fieldworkmodeldictmakerstep/images/fieldworkmodeldictmakericon.png')
         # Ports:
         self.addPort(('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#provides',
