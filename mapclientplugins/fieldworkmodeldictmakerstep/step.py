@@ -32,7 +32,7 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
                       'ju#fieldworkmodel'))
         self.addPort(('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#uses',
-                      'string'))
+                      'python#string'))
 
         self._gfDict = None
         self._gf = None
