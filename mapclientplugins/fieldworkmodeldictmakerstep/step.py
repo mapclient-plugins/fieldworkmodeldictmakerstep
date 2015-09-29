@@ -17,7 +17,7 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
     def __init__(self, location):
         super(FieldworkModelDictMakerStep, self).__init__('Fieldwork Model Dict Maker', location)
         self._configured = True # A step cannot be executed until it has been configured.
-        self._category = 'General'
+        self._category = 'Fieldwork'
         # Add any other initialisation code here:
         self._icon = QtGui.QImage(':/fieldworkmodeldictmakerstep/images/fieldworkmodeldictmakericon.png')
         # Ports:
