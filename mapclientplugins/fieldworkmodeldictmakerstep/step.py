@@ -33,10 +33,14 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         self.addPort(('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
                       'http://physiomeproject.org/workflow/1.0/rdf-schema#uses',
                       'python#string'))
+        self.addPort(('http://physiomeproject.org/workflow/1.0/rdf-schema#port',
+                      'http://physiomeproject.org/workflow/1.0/rdf-schema#uses',
+                      'ju#fieldworkmodeldict'))
 
         self._gfDict = None
         self._gf = None
         self._gfName = None
+        self._gfDict2 = None
 
     def execute(self):
         '''
@@ -45,9 +49,12 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         may be connected up to a button in a widget for example.
         '''
         # Put your execute step code here before calling the '_doneExecution' method.
-        if self._gfDict==None:
+        if self._gfDict is None:
             self._gfDict = {}
-        self._gfDict[self._gfName] = self._gf
+        if self._gfName is not None:
+            self._gfDict[self._gfName] = self._gf
+        if self._gfDict2 is not None:
+            self._gfDict.update(self._gfDict2)
         self._doneExecution()
 
     def setPortData(self, index, dataIn):
@@ -60,8 +67,10 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
             self._gfDict = dataIn # ju#fieldworkmodeldict
         elif index == 2:
             self._gf = dataIn # ju#fieldworkmodel
-        else:
+        elif index == 3:
             self._gfName = dataIn # string
+        else:
+            self._gfDict2 = dataIn
 
     def getPortData(self, index):
         '''
