@@ -3,6 +3,7 @@
 MAP Client Plugin Step
 '''
 
+import json
 from PySide import QtGui
 
 from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
@@ -102,22 +103,17 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         '''
         pass # TODO: Must actually set the step's identifier here
 
-    def serialize(self, location):
+    def serialize(self):
         '''
-        Add code to serialize this step to disk.  The filename should
-        use the step identifier (received from getIdentifier()) to keep it
-        unique within the workflow.  The suggested name for the file on
-        disk is:
-            filename = getIdentifier() + '.conf'
+        Add code to serialize this step to disk. Returns a json string for
+        mapclient to serialise.
         '''
-        pass
+        return ''
 
-    def deserialize(self, location):
+    def deserialize(self, string):
         '''
-        Add code to deserialize this step from disk.  As with the serialize 
-        method the filename should use the step identifier.  Obviously the 
-        filename used here should be the same as the one used by the
-        serialize method.
+        Add code to deserialize this step from disk. Parses a json string
+        given by mapclient
         '''
         pass
 
