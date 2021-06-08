@@ -1,4 +1,3 @@
-
 '''
 MAP Client Plugin Step
 '''
@@ -16,7 +15,7 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
 
     def __init__(self, location):
         super(FieldworkModelDictMakerStep, self).__init__('Fieldwork Model Dict Maker', location)
-        self._configured = True # A step cannot be executed until it has been configured.
+        self._configured = True  # A step cannot be executed until it has been configured.
         self._category = 'Fieldwork'
         # Add any other initialisation code here:
         self._icon = QtGui.QImage(':/fieldworkmodeldictmakerstep/images/fieldworkmodeldictmakericon.png')
@@ -64,11 +63,11 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         uses port for this step then the index can be ignored.
         '''
         if index == 1:
-            self._gfDict = dataIn # ju#fieldworkmodeldict
+            self._gfDict = dataIn  # ju#fieldworkmodeldict
         elif index == 2:
-            self._gf = dataIn # ju#fieldworkmodel
+            self._gf = dataIn  # ju#fieldworkmodel
         elif index == 3:
-            self._gfName = dataIn # string
+            self._gfName = dataIn  # string
         else:
             self._gfDict2 = dataIn
 
@@ -78,7 +77,7 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         The index is the index of the port in the port list.  If there is only one
         provides port for this step then the index can be ignored.
         '''
-        return self._gfDict # ju#fieldworkmodeldict
+        return self._gfDict  # ju#fieldworkmodeldict
 
     def configure(self):
         '''
@@ -94,13 +93,13 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         '''
         The identifier is a string that must be unique within a workflow.
         '''
-        return 'FieldworkModelDictMaker' # TODO: The string must be replaced with the step's unique identifier
+        return 'FieldworkModelDictMaker'  # TODO: The string must be replaced with the step's unique identifier
 
     def setIdentifier(self, identifier):
         '''
         The framework will set the identifier for this step when it is loaded.
         '''
-        pass # TODO: Must actually set the step's identifier here
+        pass  # TODO: Must actually set the step's identifier here
 
     def serialize(self):
         '''
@@ -115,4 +114,3 @@ class FieldworkModelDictMakerStep(WorkflowStepMountPoint):
         given by mapclient
         '''
         pass
-
